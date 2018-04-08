@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react'
 import { Link } from 'react-router-dom'
-import classNames from 'classnames'
 import theme from './NavMenu.css'
 
 export default class NavMenu extends PureComponent {
