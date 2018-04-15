@@ -1,3 +1,1 @@
-export { default } from './Layout'
-export { default } from './NavMenu'
-export { default } from './NotFound'
+export { default as NotFound } from './NotFound'

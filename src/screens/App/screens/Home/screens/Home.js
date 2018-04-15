@@ -1,6 +1,6 @@
-import Reactfrom 'react'
+import React from 'react'
 
-const Index = () => (
+const Home = () => (
   <div>
     <h1>Melika</h1>
 
@@ -8,4 +8,4 @@ const Index = () => (
   </div>
 )
 
-export default Index
+export default Home

@@ -26,3 +26,20 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.NavMenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.NavButton {
+  text-decoration: none;
+  padding: 5px;
+  color: black;
+}
+
+.a {
+  text-decoration: none;
+  color: black;
+}
