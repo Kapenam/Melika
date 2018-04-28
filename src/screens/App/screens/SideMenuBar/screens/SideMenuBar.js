@@ -7,7 +7,7 @@ const SideMenuBar = ({menuItems}) => (
   <div className="sideBarContainer">
     { menuItems.map(item => {
      return ( 
-      <div className="menuItem">
+      <div key={`menu-item-${item.name}`} className="menuItem">
           <a href={item.link}>
             {item.name}
           </a>
