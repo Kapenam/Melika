@@ -5,6 +5,7 @@ import {
   Route,
   Link,
 } from 'react-router-dom'
+import { SideMenuBar } from 'screens/App/screens/SideMenuBar'
 import { Home } from './Home'
 import { Jobs } from './Jobs'
 import { Leads } from './Leads'
@@ -29,14 +30,17 @@ class App extends Component {
                 <div className="NavButton"><Link to='/vendors'>Vendors</Link></div>
               </div>
             </nav>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/jobs" component={Jobs} />
-              <Route exact path="/leads" component={Leads} />
-              <Route exact path="/materials" component={Materials} />
-              <Route exact path="/quotes" component={Quotes} />
-              <Route exact path="/vendors" component={Vendors} />
-            </Switch>
+            <div className="content">
+              <SideMenuBar />
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/jobs" component={Jobs} />
+                <Route exact path="/leads" component={Leads} />
+                <Route exact path="/materials" component={Materials} />
+                <Route exact path="/quotes" component={Quotes} />
+                <Route exact path="/vendors" component={Vendors} />
+              </Switch>
+            </div>
           </div>
         </Router>
       </div>
