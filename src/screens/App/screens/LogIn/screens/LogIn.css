@@ -56,11 +56,13 @@ input[type=text] {
   font-size: 14px;
   padding: 5px 0;
   width: 31%;
+  cursor: pointer;
 }
 
 .LogInButton:disabled {
   border: solid 2px #9b9b9b;
   background-color: #9b9b9b;
+  cursor: wait;
 }
 
 

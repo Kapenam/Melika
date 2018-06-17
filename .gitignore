@@ -60,3 +60,6 @@ typings/
 # nvm
 .nvmrc
 .node-version
+
+# create-react-app build
+build

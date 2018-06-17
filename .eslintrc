@@ -1,0 +1,44 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "sourceType": "module"
+  },
+  "extends": [
+    "airbnb",
+    "prettier",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:import/recommended"
+  ],
+  "plugins": [
+    "prettier",
+    "standard",
+    "react",
+    "babel",
+    "import",
+    "promise",
+    "jsx-a11y"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "rules": {
+    "react/jsx-quotes": 0,
+    "jsx-quotes": [2, "prefer-double"],
+    "react/jsx-indent-props": [2, 2],
+    "react/wrap-multilines": 0,
+    "comma-dangle": [2, "always-multiline"],
+    "prefer-arrow-callback": "error",
+    "arrow-parens": ["error", "as-needed"],
+    "no-duplicate-imports": "error",
+    "no-unused-labels": "error",
+    "no-unused-vars": "error",
+    "no-useless-constructor": "error",
+    "no-multi-spaces": "error",
+    "semi": "error"
+  }
+}

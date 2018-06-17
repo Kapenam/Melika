@@ -1,18 +1,21 @@
-import React, { Component } from 'react'
-import FormErrors from '../components/FormErrors'
-import './LogIn.css'
+import React, { Component } from 'react';
+import { USER_AUTH_TOKEN } from 'shared/const';
+import history from 'shared/utilities/history';
+import Auth from 'shared/api/Auth';
+import FormErrors from '../components/FormErrors';
+import './LogIn.css';
 
 export default class LogIn extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       email: '',
-      password: '', 
+      password: '',
       formErrors: { email: '', password: '' },
       emailValid: false,
       passwordValid: false,
       formValid: false,
-    }
+    };
   }
 
   validateField = (fieldName, value) => {
@@ -32,34 +35,54 @@ export default class LogIn extends Component {
       default:
         break;
     }
-    this.setState({
-      formErrors: fieldValidationErrors,
-      emailValid: emailValid,
-      passwordValid: passwordValid
-    }, this.validateForm);
-  }
+    this.setState(
+      {
+        formErrors: fieldValidationErrors,
+        emailValid: emailValid,
+        passwordValid: passwordValid,
+      },
+      this.validateForm,
+    );
+  };
 
   validateForm = () => {
-    this.setState({ formValid: this.state.emailValid && this.state.passwordValid });
-  }
+    this.setState({
+      formValid: this.state.emailValid && this.state.passwordValid,
+    });
+  };
 
   retrievePassword = () => {
-    console.log('User has forgotten password')
-  }
+    console.log('User has forgotten password');
+  };
 
-  handleUserInput = (e) => {
-    const name = e.target.name
-    const value = e.target.value
+  handleUserInput = e => {
+    const name = e.target.name;
+    const value = e.target.value;
     this.setState(
-      { 
-        [name]: value
+      {
+        [name]: value,
       },
-      () => { this.validateField(name, value) }
-    )
-  }
-  routeUser = () => {
-    console.log('user has been routed')
-  }
+      () => {
+        this.validateField(name, value);
+      },
+    );
+  };
+
+  handleSubmit = async () => {
+    const { email, password } = this.state;
+
+    // const result = await Auth.login({ email, password });
+    // console.log('User Email Returned: ', result.email);
+
+    // history.push('/');
+    console.log('Auth: ', Auth);
+    Auth.login;
+  };
+
+  saveUserData = token => {
+    localStorage.setItem(USER_AUTH_TOKEN, token);
+  };
+
   render() {
     return (
       <div className="container">
@@ -73,7 +96,7 @@ export default class LogIn extends Component {
             placeholder="Email"
             name="email"
             value={this.state.email}
-            onChange={(e) => this.handleUserInput(e)}
+            onChange={e => this.handleUserInput(e)}
           />
           <br />
           <input
@@ -81,21 +104,21 @@ export default class LogIn extends Component {
             placeholder="Password"
             name="password"
             value={this.state.password}
-            onChange={(e) => this.handleUserInput(e)}
+            onChange={e => this.handleUserInput(e)}
           />
           <label className="rememberMe">
-            <input value="1" id="rememberMe" type="checkbox"/>
+            <input value="1" id="rememberMe" type="checkbox" />
             <span>Remember Me</span>
-          </label> 
+          </label>
           <div className="logIn">
-            <button 
-              className="LogInButton" 
-              onClick={this.routeUser} 
+            <button
+              className="LogInButton"
+              onClick={this.handleSubmit}
               disabled={!this.state.formValid}
             >
               Log In
             </button>
-            <input type="text" value="Forgot Password" onClick={this.retrievePassword} />
+            <button onClick={this.retrievePassword}>Forgot Password</button>
           </div>
         </div>
         <div className="rightContainer">
@@ -105,6 +128,6 @@ export default class LogIn extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
