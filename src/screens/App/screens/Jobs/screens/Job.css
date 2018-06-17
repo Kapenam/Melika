@@ -1,5 +1,11 @@
 .jobPageContent {
   display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+
+.message {
+  display: flex;
   flex-direction: column;
   padding: 10px;
 }
