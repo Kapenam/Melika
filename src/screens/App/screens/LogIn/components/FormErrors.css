@@ -1,0 +1,10 @@
+.formErrors {
+  background-color: #f2dede;
+  border-radius: 5px;
+}
+
+p {
+  padding: 2px;
+  text-align: center;
+  font-size: 12px;
+}

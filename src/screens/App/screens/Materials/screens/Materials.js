@@ -1,10 +1,14 @@
 import React from 'react'
+import { SideMenuBar } from 'screens/App/components/SideMenuBar'
+import './Materials.css'
 
 const Materials = () => (
-  <div>
-    <h1>Melika</h1>
-
-    <p>Welcome to Melika. Just a material page demo. Good bye!</p>
+  <div className="materialsPageContent">
+    <SideMenuBar />
+    <div className="message">
+      <h1>Melika</h1>
+      <p>HOLA COMO ESTAS</p>
+    </div>
   </div>
 )
 
