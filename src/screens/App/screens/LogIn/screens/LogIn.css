@@ -22,11 +22,7 @@
   font-size: 12px;
 }
 .rememberMe {
-  display: flex;
-  flex-direction: row;
   font-size: 12px;
-  width: 33%;
-  justify-content: space-between;
 }
 
 input {
@@ -39,6 +35,12 @@ input[type=text] {
   border-bottom: solid #DAD8D8 1px; 
 }
 
+input[type=text] {
+  padding-left: 8px;
+  font-size: 12px;
+  max-width: 100px;
+}
+
 .logIn {
   display: flex;
   flex-direction: row;
@@ -47,12 +49,20 @@ input[type=text] {
 }
 
 .LogInButton {
-  border: solid 2px #FC800B;
-  border-radius: 5px;
-  background-color: #FC800B;
-  color: FCFCFC;
+  border: solid 2px #f67a54;
+  border-radius: 24px;
+  background-color: #f67a54;
+  color: #FCFCFC;
   font-size: 14px;
+  padding: 5px 0;
+  width: 31%;
 }
+
+.LogInButton:disabled {
+  border: solid 2px #9b9b9b;
+  background-color: #9b9b9b;
+}
+
 
 .rightContainer {
   background-image: url('../../../Assets/Images/LoginPagePhoto.png');
