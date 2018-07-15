@@ -31,12 +31,12 @@ input {
 
 input[type=email],
 input[type=password],
-input[type=text] {
+input[type=button] {
   border-bottom: solid #DAD8D8 1px; 
 }
 
-input[type=text] {
-  padding-left: 8px;
+input[type=button] {
+  padding-left: 3px;
   font-size: 12px;
   max-width: 100px;
 }
@@ -67,7 +67,7 @@ input[type=text] {
 
 
 .rightContainer {
-  background-image: url('../../../Assets/Images/LoginPagePhoto.png');
+  background-image: url('../../../assets/images/loginPagePhoto.png');
   background-size: 100%;
   background-repeat: no-repeat;
   height: 100vh;
@@ -77,5 +77,10 @@ input[type=text] {
 .photoText {
   color: #ffffff;
   padding-top: 25vh;
-  padding-left: 10vw;
+}
+
+p,
+h1 {
+  padding: 2px;
+  text-align: center;
 }

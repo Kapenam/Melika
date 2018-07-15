@@ -7,8 +7,11 @@
   },
   "dependencies": {
     "ajv": "^6.4.0",
+    "apollo-cache-inmemory": "^1.2.5",
+    "apollo-client": "^2.3.5",
     "apollo-client-preset": "^1.0.8",
     "apollo-link-context": "^1.0.8",
+    "apollo-link-http": "^1.5.4",
     "auth0-js": "^9.6.1",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
@@ -16,6 +19,7 @@
     "graphql-tag": "^2.9.2",
     "history": "^4.7.2",
     "isomorphic-fetch": "^2.2.1",
+    "prop-types": "^15.6.2",
     "react": "^16.2.0",
     "react-apollo": "^2.1.4",
     "react-dom": "^16.2.0",
@@ -26,7 +30,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "react-scripts lint"
   },
   "devDependencies": {
     "enzyme": "^3.3.0",

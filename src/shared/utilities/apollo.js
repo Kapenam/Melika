@@ -1,14 +1,14 @@
-import { USER_AUTH_TOKEN, HASURA } from 'shared/const'
 import { ApolloLink } from 'apollo-client-preset'
 import { setContext } from 'apollo-link-context'
+import { USER_AUTH_TOKEN, HASURA } from '../const'
 
 const MiddlewareAuthLink = new ApolloLink((operation, forward) => {
   const token = localStorage.getItem(USER_AUTH_TOKEN)
   const authorizationHeader = token ? `Bearer ${token}` : null
   operation.setContext({
     headers: {
-      authorization: authorizationHeader
-    }
+      authorization: authorizationHeader,
+    },
   })
   return forward(operation)
 })
@@ -24,7 +24,7 @@ const AuthLink = setContext((_, { headers }) => {
       'Access-Control-Allow-Origin': '*',
       'X-Hasura-Role': 'admin',
       'Content-Type': 'application/json',
-    }
+    },
   }
 });
 

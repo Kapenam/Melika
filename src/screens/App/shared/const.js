@@ -1,4 +1,4 @@
-export const MenuItems = [
+const MenuItems = [
   {
     link: '/leads',
     name: 'Leads',
@@ -28,3 +28,5 @@ export const MenuItems = [
     name: 'Materials',
   },
 ]
+
+export default MenuItems
