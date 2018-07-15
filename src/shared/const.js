@@ -7,5 +7,5 @@ export const HASURA = {
   DATA: {
     API_URI: 'https://data.blabbermouth96.hasura-api.io/',
     GRAPHQL_API_URI: 'https://data.blabbermouth96.hasura-api.io/v1alpha1/graphql',
-  }
+  },
 }

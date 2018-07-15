@@ -19,41 +19,44 @@ export default class LogIn extends Component {
   }
 
   validateField = (fieldName, value) => {
-    const fieldValidationErrors = this.state.formErrors;
-    let emailValid = this.state.emailValid;
-    let passwordValid = this.state.passwordValid;
+    let {
+      formErrors,
+      emailValid,
+      passwordValid,
+    } = this.state
 
     switch (fieldName) {
       case 'email':
         emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
-        fieldValidationErrors.email = emailValid ? '' : ' is invalid';
+        formErrors.email = emailValid ? '' : ' is invalid';
         break;
       case 'password':
         passwordValid = value.length >= 6;
-        fieldValidationErrors.password = passwordValid ? '' : ' is too short';
+        formErrors.password = passwordValid ? '' : ' is too short';
         break;
       default:
         break;
     }
     this.setState(
       {
-        formErrors: fieldValidationErrors,
-        emailValid: emailValid,
-        passwordValid: passwordValid,
+        formErrors,
+        emailValid,
+        passwordValid,
       },
       this.validateForm,
-    );
-  };
+    )
+  }
 
   validateForm = () => {
+    const { emailValid, passwordValid } = this.state
     this.setState({
-      formValid: this.state.emailValid && this.state.passwordValid,
-    });
-  };
+      formValid: emailValid && passwordValid,
+    })
+  }
 
   retrievePassword = () => {
-    console.log('User has forgotten password');
-  };
+    console.log('User has forgotten password')
+  }
 
   handleUserInput = e => {
     const name = e.target.name;
@@ -65,37 +68,46 @@ export default class LogIn extends Component {
       () => {
         this.validateField(name, value);
       },
-    );
-  };
+    )
+  }
 
   handleSubmit = async () => {
-    const { email, password } = this.state;
+    // const { email, password } = this.state;
 
-    // const result = await Auth.login({ email, password });
-    // console.log('User Email Returned: ', result.email);
+    // const result = await Auth.login({ email, password })
+    // console.log('User Email Returned: ', result.email)
 
-    // history.push('/');
-    console.log('Auth: ', Auth);
-    Auth.login;
-  };
+    // history.push('/')
+    console.log('Auth: ', Auth)
+    Auth.login
+  }
 
   saveUserData = token => {
-    localStorage.setItem(USER_AUTH_TOKEN, token);
-  };
+    localStorage.setItem(USER_AUTH_TOKEN, token)
+  }
 
   render() {
+    const {
+      formErrors,
+      email,
+      password,
+      formValid,
+    } = this.state
+
     return (
       <div className="container">
         <div className="leftContainer">
-          <h1>Log In</h1>
+          <h1>
+            Log In
+          </h1>
           <div className="errorMessage">
-            <FormErrors formErrors={this.state.formErrors} />
+            <FormErrors formErrors={formErrors} />
           </div>
           <input
             type="email"
             placeholder="Email"
             name="email"
-            value={this.state.email}
+            value={email}
             onChange={e => this.handleUserInput(e)}
           />
           <br />
@@ -103,28 +115,35 @@ export default class LogIn extends Component {
             type="password"
             placeholder="Password"
             name="password"
-            value={this.state.password}
+            value={password}
             onChange={e => this.handleUserInput(e)}
           />
-          <label className="rememberMe">
+          <label htmlFor="1" className="rememberMe">
             <input value="1" id="rememberMe" type="checkbox" />
-            <span>Remember Me</span>
+            <span>
+              Remember Me
+            </span>
           </label>
           <div className="logIn">
             <button
+              type="button"
               className="LogInButton"
-              onClick={this.handleSubmit}
-              disabled={!this.state.formValid}
+              onClick={this.routeUser}
+              disabled={!formValid}
             >
               Log In
             </button>
-            <button onClick={this.retrievePassword}>Forgot Password</button>
+            <input type="button" value="Forgot Password" onClick={this.retrievePassword} />
           </div>
         </div>
         <div className="rightContainer">
           <div className="photoText">
-            <p>Atlanta Porch and Patio</p>
-            <h1>Customer Relationship Management</h1>
+            <p>
+              Atlanta Porch and Patio
+            </p>
+            <h1>
+              Customer Relationship Management
+            </h1>
           </div>
         </div>
       </div>

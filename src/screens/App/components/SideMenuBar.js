@@ -1,8 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
-import Auth from 'shared/api/Auth';
-import { MenuItems } from '../shared/const';
+import Auth from 'shared/api/auth'
+import MenuItems from '../shared/const'
 import './SideMenuBar.css';
 
 const SideMenuBar = ({ menuItems }) => {
@@ -15,7 +15,9 @@ const SideMenuBar = ({ menuItems }) => {
     <ul className="sideBarContainer">
       {newMenuItems.map(item => (
         <li key={`menu-item-${item.name}`} className="menuItem">
-          <a href={item.link}>{item.name}</a>
+          <a href={item.link}>
+            {item.name}
+          </a>
         </li>
       ))}
     </ul>
