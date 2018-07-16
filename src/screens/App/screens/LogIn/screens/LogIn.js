@@ -1,22 +1,29 @@
 import React, { Component } from 'react';
-import { USER_AUTH_TOKEN } from 'shared/const';
-import history from 'shared/utilities/history';
-import Auth from 'shared/api/Auth';
+import AuthService from 'shared/utilities/authService';
 import FormErrors from '../components/FormErrors';
 import './LogIn.css';
 
 export default class LogIn extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: '',
-      password: '',
-      formErrors: { email: '', password: '' },
-      emailValid: false,
-      passwordValid: false,
-      formValid: false,
-    };
-  }
+  state = {
+    email: '',
+    password: '',
+    formErrors: { email: '', password: '' },
+    emailValid: false,
+    passwordValid: false,
+    formValid: false,
+  };
+
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     email: '',
+  //     password: '',
+  //     formErrors: { email: '', password: '' },
+  //     emailValid: false,
+  //     passwordValid: false,
+  //     formValid: false,
+  //   };
+  // }
 
   validateField = (fieldName, value) => {
     const fieldValidationErrors = this.state.formErrors;
@@ -70,24 +77,20 @@ export default class LogIn extends Component {
 
   handleSubmit = async () => {
     const { email, password } = this.state;
-
-    // const result = await Auth.login({ email, password });
-    // console.log('User Email Returned: ', result.email);
-
-    // history.push('/');
-    console.log('Auth: ', Auth);
-    Auth.login;
+    await AuthService.handleLogin(email, password);
   };
 
-  saveUserData = token => {
-    localStorage.setItem(USER_AUTH_TOKEN, token);
-  };
+  // saveUserData = token => {
+  //   localStorage.setItem(USER_AUTH_TOKEN, token);
+  // };
 
   render() {
     return (
       <div className="container">
         <div className="leftContainer">
-          <h1>Log In</h1>
+          <h1>
+Log In
+          </h1>
           <div className="errorMessage">
             <FormErrors formErrors={this.state.formErrors} />
           </div>
@@ -108,7 +111,9 @@ export default class LogIn extends Component {
           />
           <label className="rememberMe">
             <input value="1" id="rememberMe" type="checkbox" />
-            <span>Remember Me</span>
+            <span>
+Remember Me
+            </span>
           </label>
           <div className="logIn">
             <button
@@ -118,13 +123,19 @@ export default class LogIn extends Component {
             >
               Log In
             </button>
-            <button onClick={this.retrievePassword}>Forgot Password</button>
+            <button onClick={this.retrievePassword}>
+Forgot Password
+            </button>
           </div>
         </div>
         <div className="rightContainer">
           <div className="photoText">
-            <p>Atlanta Porch and Patio</p>
-            <h1>Customer Relationship Management</h1>
+            <p>
+Atlanta Porch and Patio
+            </p>
+            <h1>
+Customer Relationship Management
+            </h1>
           </div>
         </div>
       </div>
