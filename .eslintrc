@@ -1,75 +1,28 @@
 {
   "parserOptions": {
-    "ecmaVersion": 2017,
-    "sourceType": "module"
+    "sourceType": "module",
+    "ecmaVersion": 2017
   },
-  "parser": "babel-eslint",
-  "extends": [
-    "airbnb",
-    "prettier",
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended",
-    "plugin:import/recommended"
-  ],
+  "extends": "airbnb",
   "plugins": [
-    "prettier",
-    "standard",
-    "react",
-    "babel",
+    "jsx-ally",
     "import",
+    "node",
     "promise",
-    "jsx-a11y"
+    "react",
+    "prettier",
+    "babel",
+    "jest"
   ],
   "env": {
-    "browser": true,
-    "node": true,
     "es6": true,
-    "jest": true
+    "jest": true,
+    "browser": true,
+    "serviceworker": true,
+    "worker": true
   },
   "rules": {
-    "jsx-a11y/href-no-hash": "off",
-    "jsx-a11y/anchor-is-valid": [
-      "warn",
-      {
-        "aspects": [
-          "invalidHref"
-        ]
-      }
-    ],
-    "react/jsx-quotes": 0,
-    "jsx-quotes": [
-      2,
-      "prefer-double"
-    ],
-    "react/jsx-indent-props": [
-      2,
-      2
-    ],
-    "react/jsx-filename-extension": [
-      1,
-      {
-        "extensions": [
-          ".js",
-          ".jsx"
-        ]
-      }
-    ],
-    "react/wrap-multilines": 0,
-    "comma-dangle": [
-      2,
-      "always-multiline"
-    ],
-    "prefer-arrow-callback": "error",
-    "arrow-parens": [
-      "error",
-      "as-needed"
-    ],
-    "no-duplicate-imports": "error",
-    "no-unused-labels": "error",
-    "no-unused-vars": "error",
-    "no-useless-constructor": "error",
-    "no-multi-spaces": "error",
-    "semi": "off"
+    "jsx-quotes": ["0"],
+    "prettier/prettier": "error"
   }
 }

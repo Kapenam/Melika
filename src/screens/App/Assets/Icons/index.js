@@ -1,7 +1,0 @@
-export { default as circleGraph } from './circle-graph.svg'
-export { default as contractCount } from './contract-count.svg'
-export { default as largeGraph } from './large-graph.svg'
-export { default as leadCount } from './lead-count.svg'
-export { default as priceCount } from './price-count.svg'
-export { default as summary } from './summary.svg'
-export { default as totalSummary } from './total-summary.svg'
