@@ -22,9 +22,8 @@
     "worker": true
   },
   "rules": {
-    "jsx-quotes": [
-      "0"
-    ],
-    "prettier/prettier": "error"
+    "jsx-quotes": ["0"],
+    "prettier/prettier": "error",
+    "semi": "error"
   }
 }
