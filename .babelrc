@@ -1,0 +1,19 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ],
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "transform-decorators",
+    "transform-class-properties",
+    "transform-export-extensions",
+    "react-hot-loader/babel"
+  ]
+}
