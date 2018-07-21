@@ -1,33 +1,32 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
+
+import Home from '../screens/Home/screens/Home'
+import Jobs from '../screens/Jobs/screens/Jobs'
+import Leads from '../screens/Leads/screens/Leads'
+import Materials from '../screens/Materials/screens/Materials'
+import Quotes from '../screens/Quotes/screens/Quotes'
+import Vendors from '../screens/Vendors/screens/Vendors'
 
 import Logo from './Logo'
-import { SideMenuBar } from '../components'
-import { Home } from '../screens/Home'
-import { UserProfile } from '../screens/UserProfile'
-import { Jobs } from '../screens/Jobs'
-import { Leads } from '../screens/Leads'
-import { Materials } from '../screens/Materials'
-import { Quotes } from '../screens/Quotes'
-import { Vendors } from '../screens/Vendors'
+import SideMenuBar from './SideMenuBar'
+import TopNavBar from './TopNavBar'
 import NotFound from './NotFound'
-import './AppEntry.css'
+import styles from './AppEntry.css'
 
 const AppEntry = () => (
-  <div className="AppEntry">
-    <div className="AppEntry-Menu">
-      <Logo className="AppEntry-Logo" />
-      <SideMenuBar />
-    </div>
-    <div className="AppEntry-Body">
+  <div className={styles.AppEntry}>
+    <TopNavBar className={styles.AppEntry_Nav} userName="Sol Elisha" />
+    <Logo className={styles.AppEntry_Logo} />
+    <SideMenuBar className={styles.AppEntry_Menu} />
+    <div className={styles.AppEntry_Body}>
       <Switch>
-        <Route exact path="/" exact component={Home} />
-        <Route exact path="/profile" component={UserProfile} />
-        <Route exact path="/jobs" component={Jobs} />
-        <Route exact path="/leads" component={Leads} />
-        <Route exact path="/materials" component={Materials} />
-        <Route exact path="/quotes" component={Quotes} />
-        <Route exact path="/vendors" component={Vendors} />
+        <Route path="/" exact component={Home} />
+        <Route path="/jobs" component={Jobs} />
+        <Route path="/leads" component={Leads} />
+        <Route path="/materials" component={Materials} />
+        <Route path="/quotes" component={Quotes} />
+        <Route path="/vendors" component={Vendors} />
         <Route component={NotFound} />
       </Switch>
     </div>

@@ -17,18 +17,17 @@ const validateOptions = (options = defaultOptions) => {
 
   let properOptions
 
-  for (const key in options) {
-    if (options.hasOwnProperty(key)) {
+  Object.keys(options).forEach(key => {
+    if (Object.keys(options).includes(key)) {
       properOptions[key] = options[key] || defaultOptions[key]
     }
-  }
+  })
 
   return properOptions
 }
 
-const load = (name, { doNotParse } = { doNotParse: false }) => {
-  return cookie.load(name, doNotParse)
-}
+const load = (name, { doNotParse } = { doNotParse: false }) =>
+  cookie.load(name, doNotParse)
 
 const save = (name, value, options = defaultOptions) => {
   const validatedOptions = validateOptions(options)

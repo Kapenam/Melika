@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+
 import Leads from '../Leads'
 
 it('renders without crashing', () => {

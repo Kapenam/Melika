@@ -1,5 +1,6 @@
 import { ApolloLink } from 'apollo-client-preset'
 import { setContext } from 'apollo-link-context'
+
 import { HASURA } from '../const'
 
 const MiddlewareAuthLink = new ApolloLink((operation, forward) => {
@@ -13,11 +14,11 @@ const MiddlewareAuthLink = new ApolloLink((operation, forward) => {
   return forward(operation)
 })
 
-const AuthLink = setContext((_, { headers }) => {
+const AuthLink = setContext((_, { headers }) =>
   // get the authentication token from local storage if it exists
   // const token = localStorage.getItem(AUTH_TOKEN);
   // return the headers to the context so httpLink can read them
-  return {
+  ({
     headers: {
       ...headers,
       authorization: `Bearer ${HASURA.JWT_AUTH_TOKEN}`,
@@ -25,8 +26,8 @@ const AuthLink = setContext((_, { headers }) => {
       'X-Hasura-Role': 'admin',
       'Content-Type': 'application/json',
     },
-  }
-})
+  }),
+)
 
 // const afterwareLink = new ApolloLink((operation, forward) =>
 //   forward(operation).map(response => {

@@ -1,0 +1,134 @@
+.userProfileContent {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  min-width: 915px;
+  max-width: 1200px;
+}
+
+.topRow {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.profileIcons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.leadCount,
+.contractCount,
+.priceCount,
+.totalSummary {
+  width: 220px;
+  height: 70px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #fff1e5;
+}
+
+.leadCount {
+  background-image: url('assets/images/lead-count.png');
+}
+
+.contractCount {
+  background-image: url('assets/images/contract-count.png');
+}
+
+.priceCount {
+  background-image: url('assets/images/price-average.png');
+}
+
+.totalSummary {
+  background-image: url('assets/images/total-summary.png');
+}
+
+.midRow,
+.bottomRow {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.firstColumn {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  padding-right: 10px;
+}
+
+.heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 46px;
+}
+
+h1 {
+  width: 214px;
+  height: 27px;
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+.circleGraph,
+.largeGraph {
+  width: 100%;
+  height: 320px;
+  background-color: #fff1e5;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.secondColumn {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+
+.largeGraph {
+  background-image: url('assets/images/large-graph.png');
+}
+
+.circleGraph {
+  background-image: url('assets/images/circle-graph.png');
+}
+
+.leads,
+.jobs {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 500px;
+  padding: 0 10px;
+}
+
+.summaryHeading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 14px;
+  width: 75%;
+}
+
+ul:first-child {
+  width: 150px;
+  padding-left: 20px;
+}
+
+.summaries {
+  display: flex;
+  flex-direction: column;
+}
+
+.summary {
+  width: 100%;
+  height: 52px;
+  background-color: #fff1e5;
+  background-image: url('assets/images/summary.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}

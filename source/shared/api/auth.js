@@ -1,6 +1,8 @@
 import axios from 'axios'
+
 import { HASURA } from '../const'
 
+/* eslint-disable */
 const login = async ({ email, password, role = 'user' }) => {
   try {
     const payload = await axios.post(
@@ -22,7 +24,7 @@ const login = async ({ email, password, role = 'user' }) => {
     )
 
     console.log('Payload Response: ', payload)
-    //TODO: check the response status here b/c if it's not 500/ 400s will not get to the catch block
+    // TODO: check the response status here b/c if it's not 500/ 400s will not get to the catch block
     const { response, status, data } = payload
     // localStorage.setItem(USER_AUTH_TOKEN, data['auth_token']);
 
@@ -66,6 +68,8 @@ const logout = async userAuthToken => {
     return e
   }
 }
+
+/* eslint-disable */
 
 export default {
   login,

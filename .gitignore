@@ -64,3 +64,7 @@ public
 # test folders
 .nyc_output
 coverage
+.lcov
+
+# Yarn Autoclean file
+.yarnclean

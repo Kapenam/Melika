@@ -1,7 +1,7 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 import { BrowserRouter } from 'react-router-dom'
+
 import SideMenuBar from '../SideMenuBar'
 
 describe('App/screens/SideMenuBar/screens/SideMenuBar', () => {

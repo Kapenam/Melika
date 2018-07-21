@@ -1,17 +1,18 @@
 import { USER_AUTH_COOKIE_NAME } from '../const'
 import Auth from '../api/auth'
+
 import ClientStorage from './clientStorage'
 import history from './history'
 
 const handleLogin = async (email, password) => {
   const result = await Auth.login({ email, password })
-  console.log('User Email Returned: ', result.email)
+  console.log('User Email Returned: ', result.email) // eslint-disable-line
 
   if (result && result.auth_token) {
     ClientStorage.save(USER_AUTH_COOKIE_NAME, result.auth_token)
     history.push('/')
   } else {
-    console.log('Error logging in to Has.Ur.A')
+    console.log('Error logging in to Has.Ur.A') // eslint-disable-line
   }
 }
 

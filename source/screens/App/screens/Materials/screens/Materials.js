@@ -1,9 +1,10 @@
 import React from 'react'
-import './Materials.css'
+
+import styles from './Materials.css'
 
 const Materials = () => (
-  <div className="materialsPageContent">
-    <div className="message">
+  <div className={styles.materialsPageContent}>
+    <div className={styles.message}>
       <h1>Materials</h1>
       <p>HOLA COMO ESTAS</p>
     </div>

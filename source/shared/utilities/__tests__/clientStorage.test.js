@@ -1,4 +1,5 @@
 import cookie from 'react-cookies'
+
 import ClientStorage from '../clientStorage'
 
 describe('ClientStorage', () => {

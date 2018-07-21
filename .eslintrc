@@ -1,13 +1,14 @@
 {
+  "parser": "babel-eslint",
   "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": 2017
   },
-  "extends": "airbnb",
+  "extends": ["airbnb", "plugin:prettier/recommended"],
   "plugins": [
-    "jsx-ally",
     "import",
     "node",
+    "jsx-a11y",
     "promise",
     "react",
     "prettier",
@@ -22,7 +23,29 @@
     "worker": true
   },
   "rules": {
-    "jsx-quotes": ["0"],
-    "prettier/prettier": "error"
+    "semi": "off",
+    "jsx-quotes": ["error"],
+    "react/jsx-filename-extension": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/forbid-prop-types": "off",
+    "prettier/prettier": "error",
+    "no-unused-vars": "error",
+    "no-duplicate-imports": "error",
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always"
+      }
+    ],
+    "import/no-unresolved": ["error"],
+    "import/no-cycle": "off",
+    "import/no-webpack-loader-syntax": "error"
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack.config.js"
+      }
+    }
   }
 }
