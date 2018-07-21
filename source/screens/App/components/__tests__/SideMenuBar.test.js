@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
+import { BrowserRouter } from 'react-router-dom'
 import SideMenuBar from '../SideMenuBar'
 
 describe('App/screens/SideMenuBar/screens/SideMenuBar', () => {
   it('renders without crashing', () => {
-    const div = document.createElement('div')
-    ReactDOM.render(<SideMenuBar />, div)
-    ReactDOM.unmountComponentAtNode(div)
+    const wrapper = shallow(<SideMenuBar Router={BrowserRouter} />)
+    expect(wrapper.find('ul.sideBarContainer')).toHaveLength(1)
   })
 
   // it('renders a list of menu items', () => {

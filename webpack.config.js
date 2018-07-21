@@ -71,7 +71,6 @@ module.exports = {
   },
   optimization: {
     splitChunks: {
-      // include all types of chunks
       chunks: 'all',
     },
   },
@@ -101,7 +100,6 @@ module.exports = {
       },
     }),
     new HtmlWebpackExcludeEmptyAssetsPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.LoaderOptionsPlugin({
       debug: true,
     }),
