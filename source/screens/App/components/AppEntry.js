@@ -10,6 +10,7 @@ import { Leads } from '../screens/Leads'
 import { Materials } from '../screens/Materials'
 import { Quotes } from '../screens/Quotes'
 import { Vendors } from '../screens/Vendors'
+import NotFound from './NotFound'
 import './AppEntry.css'
 
 const AppEntry = () => (
@@ -19,17 +20,16 @@ const AppEntry = () => (
       <SideMenuBar />
     </div>
     <div className="AppEntry-Body">
-      <Router>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/profile" component={UserProfile} />
-          <Route exact path="/jobs" component={Jobs} />
-          <Route exact path="/leads" component={Leads} />
-          <Route exact path="/materials" component={Materials} />
-          <Route exact path="/quotes" component={Quotes} />
-          <Route exact path="/vendors" component={Vendors} />
-        </Switch>
-      </Router>
+      <Switch>
+        <Route exact path="/" exact component={Home} />
+        <Route exact path="/profile" component={UserProfile} />
+        <Route exact path="/jobs" component={Jobs} />
+        <Route exact path="/leads" component={Leads} />
+        <Route exact path="/materials" component={Materials} />
+        <Route exact path="/quotes" component={Quotes} />
+        <Route exact path="/vendors" component={Vendors} />
+        <Route component={NotFound} />
+      </Switch>
     </div>
   </div>
 )

@@ -60,3 +60,7 @@ typings/
 # App related ignores
 dist
 public
+
+# test folders
+.nyc_output
+coverage

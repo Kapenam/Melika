@@ -1,10 +1,8 @@
 import React, { Fragment } from 'react'
-import { SideMenuBar } from 'screens/App/components'
 import './UserProfile.css'
 
 const UserProfile = () => (
   <Fragment>
-    <SideMenuBar />
     <div className="userProfileContent">
       <div className="topRow">
         <h1>Performance Overview</h1>

@@ -4,8 +4,8 @@ import './Job.css'
 const Jobs = () => (
   <div className="jobPageContent">
     <div className="message">
-      <h1>Melika</h1>
-      <p>Welcome to Melika. Just a job page demo. Good bye!</p>
+      <h1>Jobs</h1>
+      <p>We're MAGA-ing the jobs page!</p>
     </div>
   </div>
 )
