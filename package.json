@@ -15,13 +15,16 @@
     "dev":
       "webpack-dev-server --port 4789 --hot --inline --watch --colors --mode development",
     "build": "webpack --mode production",
-    "lint": "prettier --write \"source/**/*.js\""
+    "lint": "yarn lint:eslint && yarn lint:prettier",
+    "lint:prettier": "prettier --write \"source/**/*.js\"",
+    "lint:eslint": "eslint \"source/**/*.js\""
   },
   "dependencies": {
     "apollo-cache-inmemory": "^1.2.5",
     "apollo-client": "^2.3.5",
     "apollo-client-preset": "^1.0.8",
     "apollo-link-context": "^1.0.8",
+    "apollo-link-http": "^1.5.4",
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "classnames": "^2.2.5",
@@ -44,6 +47,7 @@
     "@babel/preset-env": "^7.0.0-beta.54",
     "@babel/preset-react": "^7.0.0-beta.54",
     "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^8.2.6",
     "babel-jest": "^23.4.0",
     "babel-loader": "8.0.0-beta.4",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -60,8 +64,10 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^5.1.0",
     "eslint-config-airbnb": "^17.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-import-resolver-webpack": "^0.10.1",
     "eslint-plugin-babel": "^5.1.0",
-    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jest": "^21.12.2",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-node": "^7.0.1",

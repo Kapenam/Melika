@@ -1,18 +1,31 @@
 import React from 'react'
-import './FormErrors.css'
+import PropTypes from 'prop-types'
 
-export default ({ formErrors }) => (
-  <div className="formErrors">
-    {Object.keys(formErrors).map((fieldName, i) => {
-      if (formErrors[fieldName].length > 0) {
-        return (
-          <p key={i}>
-            {fieldName} {formErrors[fieldName]}
-          </p>
-        )
-      } else {
+import styles from './FormErrors.css'
+
+const FormErrors = ({ formErrors }) => {
+  const keyString = i => `${i}-${Math.random()}`
+
+  return (
+    <div className={styles.formErrors}>
+      {Object.keys(formErrors).map((fieldName, i) => {
+        if (formErrors[fieldName].length > 0) {
+          return (
+            <p key={keyString(i)}>
+              {fieldName} {formErrors[fieldName]}
+            </p>
+          )
+        }
         return ''
-      }
-    })}
-  </div>
-)
+      })}
+    </div>
+  )
+}
+
+FormErrors.propTypes = {
+  formErrors: PropTypes.object,
+}
+
+FormErrors.defaultProps = {
+  formErrors: {},
+}

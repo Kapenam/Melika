@@ -1,5 +1,9 @@
 export const MenuItems = [
   {
+    link: '/',
+    name: 'Home',
+  },
+  {
     link: '/leads',
     name: 'Leads',
   },
@@ -8,12 +12,12 @@ export const MenuItems = [
     name: 'Quotes',
   },
   {
-    link: '/customers',
-    name: 'Customers',
-  },
-  {
     link: '/jobs',
     name: 'Jobs',
+  },
+  {
+    link: '/customers',
+    name: 'Customers',
   },
   {
     link: '/employees',
@@ -28,3 +32,5 @@ export const MenuItems = [
     name: 'Materials',
   },
 ]
+
+export default MenuItems

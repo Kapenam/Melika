@@ -1,11 +1,31 @@
 .AppEntry {
   display: grid;
-  grid-template-columns: 180px auto;
-  grid-template-rows: 1fr;
+  grid-template-rows: 74px 1fr;
+  grid-template-columns: 200px 1fr;
+  grid-template-areas:
+    'logo header'
+    'menu content';
   height: 100vh;
+  width: 100vw;
+  background-color: #f8f8f8;
+  color: #404040;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
 }
 
-.AppEntry-Menu {
+.AppEntry_Logo {
+  grid-area: logo;
+}
+
+.AppEntry_Nav {
+  grid-area: header;
+}
+
+.AppEntry_Menu {
+  grid-area: menu;
   border-right: 1px solid #666;
   height: 100vh;
   display: flex;
@@ -13,10 +33,7 @@
   flex-direction: column;
 }
 
-.AppEntry-Logo {
-  padding: 40px 0;
-}
-
-.AppEntry-Body {
+.AppEntry_Body {
+  grid-area: content;
   line-height: initial;
 }

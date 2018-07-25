@@ -1,4 +1,5 @@
 const path = require('path')
+
 const webpack = require('webpack')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -34,7 +35,6 @@ module.exports = {
         test: /\.js$/,
         use: 'babel-loader',
         exclude: /node_modules/,
-        use: ['babel-loader'],
       },
       {
         test: /\.(jpe?g|gif|png|svg|ttf|ico)$/,
