@@ -1,12 +1,12 @@
 import axios from 'axios'
 
-import { HASURA } from '../const'
+import config from 'config'
 
 /* eslint-disable */
 const login = async ({ email, password, role = 'user' }) => {
   try {
     const payload = await axios.post(
-      `${HASURA.AUTH.API_URI}v1/login`,
+      `${config.hasura.uri.auth}v1/login`,
       {
         provider: 'email',
         data: {
@@ -17,7 +17,7 @@ const login = async ({ email, password, role = 'user' }) => {
       {
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${HASURA.JWT_AUTH_TOKEN}`,
+          Authorization: `Bearer ${config.token.jwt}`,
           'X-Hasura-Role': role,
         },
       },
@@ -57,7 +57,7 @@ const logout = async userAuthToken => {
     }
 
     const payload = await axios.post(
-      `${HASURA.AUTH.API_URI}v1/user/logout`,
+      `${config.hasura.uri.auth}v1/user/logout`,
       {},
       options,
     )
