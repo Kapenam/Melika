@@ -16,7 +16,32 @@ export default class LogIn extends Component {
     formValid: false,
   }
 
-  validateField = (fieldName, value) => {
+  validateForm = () => {
+    const { emailValid, passwordValid } = this.state
+
+    this.setState({
+      formValid: emailValid && passwordValid,
+    })
+  }
+
+  retrievePassword = () => {
+    console.log('User has forgotten password') // eslint-disable-line
+  }
+
+  handleUserInput = e => {
+    const { name, value } = e.target
+
+    this.setState({ [name]: value }, () => {
+      this.validateField(name, value)
+    })
+  }
+
+  handleSubmit = async () => {
+    const { email, password } = this.state
+    await AuthService.handleLogin(email, password)
+  }
+
+  validateField(fieldName, value) {
     const { formErrors } = this.state
     let { emailValid, passwordValid } = this.state
 
@@ -41,31 +66,6 @@ export default class LogIn extends Component {
       },
       this.validateForm,
     )
-  }
-
-  validateForm = () => {
-    const { emailValid, passwordValid } = this.state
-
-    this.setState({
-      formValid: emailValid && passwordValid,
-    })
-  }
-
-  retrievePassword = () => {
-    console.log('User has forgotten password') // eslint-disable-line
-  }
-
-  handleUserInput = e => {
-    const { name, value } = e.target
-
-    this.setState({ [name]: value }, () => {
-      this.validateField(name, value)
-    })
-  }
-
-  handleSubmit = async () => {
-    const { email, password } = this.state
-    await AuthService.handleLogin(email, password)
   }
 
   render() {
@@ -107,7 +107,7 @@ export default class LogIn extends Component {
               type="button"
               className={styles.LogInButton}
               onClick={this.handleSubmit}
-              disabled={!formValid}
+              disabled={!!formValid}
             >
               Log In
             </button>

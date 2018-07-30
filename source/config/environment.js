@@ -1,8 +1,8 @@
-import dotenv from 'dotenv'
+// import dotenv from 'dotenv'
 
-if (!process.env.HASURA_TOKEN_JWT && process.env.NODE_ENV === 'development') {
-  dotenv.config()
-}
+// if (!process.env.HASURA_TOKEN_JWT && process.env.NODE_ENV === 'development') {
+//   dotenv.config()
+// }
 
 const environment = {
   auth: {

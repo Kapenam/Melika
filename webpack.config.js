@@ -4,6 +4,7 @@ const webpack = require('webpack')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackExcludeEmptyAssetsPlugin = require('html-webpack-exclude-empty-assets-plugin')
+const DotEnv = require('dotenv-webpack')
 
 module.exports = {
   context: path.resolve(__dirname, 'source'),
@@ -103,6 +104,7 @@ module.exports = {
     new webpack.LoaderOptionsPlugin({
       debug: true,
     }),
+    new DotEnv(),
   ],
   devtool: 'cheap-module-eval-source-map',
   devServer: {
