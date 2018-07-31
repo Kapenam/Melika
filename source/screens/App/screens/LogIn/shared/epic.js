@@ -12,7 +12,8 @@ const fetchUserEpic = action$ =>
     mergeMap(async action => {
       const { criteria: { email, password } } = action
       try {
-        const response = await fetch(`${config.hasura.uri.auth}v1/login`, {
+        const uri = config.hasura.uri.auth
+        const response = await fetch(`${uri}v1/login`, {
           method: 'POST',
           mode: 'cors',
           headers: {
@@ -20,7 +21,10 @@ const fetchUserEpic = action$ =>
             Authorization: `Bearer ${config.token.jwt}`,
             'X-Hasura-Role': 'user',
           },
-          body: JSON.stringify({ data: { email, password } }),
+          body: JSON.stringify({
+            provider: 'email',
+            data: { email, password },
+          }),
         })
 
         const json = await response.json()

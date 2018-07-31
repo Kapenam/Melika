@@ -29,3 +29,5 @@ FormErrors.propTypes = {
 FormErrors.defaultProps = {
   formErrors: {},
 }
+
+export default FormErrors

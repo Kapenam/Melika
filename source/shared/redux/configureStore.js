@@ -31,7 +31,6 @@ const configureStore = (initialState = {}) => {
   const store = createStore(
     rootReducer,
     initialState,
-    // rootEpic,
     composeEnhancers(...enhancers),
   )
 

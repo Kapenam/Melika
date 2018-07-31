@@ -2,7 +2,7 @@ const createFetchMiddleware = (
   fetch = window.fetch,
 ) => store => next => async action => {
   if (!action || !action.fetchConfig) {
-    next(action)
+    return next(action)
   }
 
   const { dispatch } = store
@@ -26,9 +26,9 @@ const createFetchMiddleware = (
       body: JSON.stringify(body),
     })
     const json = await response.json()
-    dispatch(successHandler(json))
+    return dispatch(successHandler(json))
   } catch (e) {
-    dispatch(failureHandler(e))
+    return dispatch(failureHandler(e))
   }
 }
 

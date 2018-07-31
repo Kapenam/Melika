@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 
-import loginReducer from 'screens/App/screens/LogIn/shared/reducer'
+import auth from 'screens/App/screens/LogIn/shared/reducer'
 
 export default combineReducers({
-  loginReducer,
+  auth,
 })
